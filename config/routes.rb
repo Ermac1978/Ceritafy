@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
+  root 'welcome#index'
+
   resources :chapters
-
   resources :stories
-
   resources :users
+
+  post "signin", to: "session#signin"
+  delete "signout", to: "session#signout"
+
+  get "signup", to: "welcome#index"
+  post "signup", to: "session#signup"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
