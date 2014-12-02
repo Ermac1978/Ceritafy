@@ -34,6 +34,7 @@ class ApplicationController < ActionController::Base
     current_user
   end
 
+  # For ActiveAdmin, only admin users can get to /admin
   def authenticate_admin_user!
     redirect_to root_path unless current_user.admin?
   end
