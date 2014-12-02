@@ -5,6 +5,7 @@
 #  id         :integer          not null, primary key
 #  created_at :datetime
 #  updated_at :datetime
+#  user_story :string(255)
 #
 
 require 'test_helper'
