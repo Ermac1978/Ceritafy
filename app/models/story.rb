@@ -7,6 +7,7 @@
 #  updated_at :datetime
 #  user_story :string(255)
 #  user_id    :integer
+#  title      :string(255)
 #
 
 class Story < ActiveRecord::Base

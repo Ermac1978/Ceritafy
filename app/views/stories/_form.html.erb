@@ -12,8 +12,11 @@
   <% end %>
 
   <div class="field has-success">
+    <%= f.label :title, class: 'control-label'%><br>
+    <%= f.text_field :title, class: 'form-control', style: 'max-width:500px' %><br>
+  </div>
+  <div class="field has-success">
     <%= f.label :user_story, class: 'control-label'%><br>
-    <%= f.text_field :user_story, class: 'form-control', style: 'max-width:500px' %><br>
     <%= f.file_field :user_story %>
   </div>
   <div class="actions">
