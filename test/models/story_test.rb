@@ -6,6 +6,7 @@
 #  created_at :datetime
 #  updated_at :datetime
 #  user_story :string(255)
+#  user_id    :integer
 #
 
 require 'test_helper'

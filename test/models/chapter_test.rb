@@ -6,6 +6,8 @@
 #  created_at   :datetime
 #  updated_at   :datetime
 #  user_chapter :string(255)
+#  user_id      :integer
+#  story_id     :integer
 #
 
 require 'test_helper'

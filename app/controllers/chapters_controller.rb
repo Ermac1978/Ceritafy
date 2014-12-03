@@ -4,7 +4,8 @@ class ChaptersController < ApplicationController
   # GET /chapters
   # GET /chapters.json
   def index
-    @chapters = Chapter.all
+  #  @chapters = Chapter.all
+    @stories = Story.for_user(current_user)
   end
 
   # GET /chapters/1
@@ -25,7 +26,7 @@ class ChaptersController < ApplicationController
   # POST /chapters.json
   def create
     @chapter = Chapter.new(chapter_params)
-#    @chapter.user = current_user
+    @chapter.user = current_user
     respond_to do |format|
       if @chapter.save
         format.html { redirect_to @chapter, notice: 'Chapter was successfully created.' }
