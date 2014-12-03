@@ -8,6 +8,7 @@
 #  user_story :string(255)
 #  user_id    :integer
 #  title      :string(255)
+#  user_text  :text
 #
 
 class Story < ActiveRecord::Base

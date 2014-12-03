@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field has-success">
+    <%= f.label :user_text, class: 'control-label'%><br>
+    <%= f.text_area :user_text, class: 'form-control', rows: '30', style: 'max-width:800px', placeholder: 'Textarea' %><br>
+  </div>
+  <div class="field has-success">
     <%= f.label :user_chapter, class: 'control-label'%><br>
     <%= f.file_field :user_chapter %>
   </div>

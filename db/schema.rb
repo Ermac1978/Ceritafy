@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141203022104) do
+ActiveRecord::Schema.define(version: 20141203042409) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20141203022104) do
     t.string   "user_chapter"
     t.integer  "user_id"
     t.integer  "story_id"
+    t.text     "user_text"
   end
 
   add_index "chapters", ["story_id"], name: "index_chapters_on_story_id"
@@ -45,6 +46,7 @@ ActiveRecord::Schema.define(version: 20141203022104) do
     t.string   "user_story"
     t.integer  "user_id"
     t.string   "title"
+    t.text     "user_text"
   end
 
   add_index "stories", ["user_id"], name: "index_stories_on_user_id"

@@ -8,6 +8,7 @@
 #  user_chapter :string(255)
 #  user_id      :integer
 #  story_id     :integer
+#  user_text    :text
 #
 
 class Chapter < ActiveRecord::Base
