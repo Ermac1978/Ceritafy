@@ -4,8 +4,8 @@ class ChaptersController < ApplicationController
   # GET /chapters
   # GET /chapters.json
   def index
-  #  @chapters = Chapter.all
-    @chapters = Chapter.for_user(current_user)
+    @chapters = Chapter.all
+  #  @chapters = Chapter.for_user(current_user)
   end
 
   # GET /chapters/1
@@ -70,6 +70,6 @@ class ChaptersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def chapter_params
-      params.require(:chapter).permit(:user_chapter)
+      params.require(:chapter).permit(:user_chapter, :user_text)
     end
 end
