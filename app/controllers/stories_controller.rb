@@ -1,16 +1,11 @@
 class StoriesController < ApplicationController
   before_action :set_story, only: [:show, :edit, :update, :destroy]
 
-  def pluck
-    @story = Story.all.pluck(:user_text).join
-    redirect_to stories_path
-  end
-
   # GET /stories
   # GET /stories.json
   def index
-    @stories = Story.all
-  #  @stories = Story.for_user(current_user)
+    # @stories = Story.all
+    @stories = Story.for_user(current_user)
   end
 
   # GET /stories/1
@@ -31,10 +26,11 @@ class StoriesController < ApplicationController
   # POST /stories.json
   def create
     @story = Story.new(story_params)
-#    @story.user = current_user
+    @story.user = current_user
     respond_to do |format|
       if @story.save
-        format.html { redirect_to @story, notice: 'Story was successfully created.' }
+      #  format.html { redirect_to @story, notice: 'Story was successfully created.' }
+        format.html { redirect_to stories_path }
         format.json { render :show, status: :created, location: @story }
       else
         format.html { render :new }

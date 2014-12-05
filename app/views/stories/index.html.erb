@@ -11,17 +11,14 @@
     <% @stories.each do |story| %>
       <tr>
         <td><%=story.title %></td>
-        <td><%= link_to 'Show', story %></td>
-        <td><%= link_to 'Edit', edit_story_path(story) %></td>
-        <td><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Read', story %></td>
+        <td><%= link_to 'Edit', edit_story_path(story) %> </td>
+        <td><%= link_to 'Delete', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-<%= link_to pluck_path %>
-<br>
 
 <%= link_to 'New Story', new_story_path %><br>
 <%= link_to 'New Chapter', new_chapter_path %><br>

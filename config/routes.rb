@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root 'welcome#index'
 
-  resources :chapters
-  resources :stories
+  resources :stories do
+    resources :chapters
+  end
   resources :users
 
   post "signin", to: "session#signin"
@@ -12,7 +13,6 @@ Rails.application.routes.draw do
   get "signup", to: "welcome#index"
   post "signup", to: "session#signup"
 
-  post "pluck", to: "stories#pluck"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

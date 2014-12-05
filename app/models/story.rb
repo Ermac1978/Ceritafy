@@ -17,5 +17,5 @@ class Story < ActiveRecord::Base
   belongs_to :user
   has_many :chapters
 
-#  scope :for_user, ->(user) { where(user: user) }
+  scope :for_user, ->(user) { where(user: user) }
 end
