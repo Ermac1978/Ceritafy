@@ -1,8 +1,7 @@
-<%= form_for(@chapter) do |f| %>
+<%= form_for([:story, @chapter]) do |f| %>
     <% if @chapter.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(@chapter.errors.count, "error") %> prohibited this story from being saved:</h2>
-
+          <h2><%= pluralize(@chapter.errors.count, "error") %> prohibited this story from being saved:</h2>)
           <ul>
             <% @chapter.errors.full_messages.each do |message| %>
                 <li><%= message %></li>

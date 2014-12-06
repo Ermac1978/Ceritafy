@@ -4,8 +4,8 @@ class ChaptersController < ApplicationController
   # GET /chapters
   # GET /chapters.json
   def index
-  #  @chapters = Chapter.all
-   @chapters = Chapter.for_user(current_user)
+    @chapters = Chapter.all
+  # @chapters = Chapter.for_user(current_user)
   end
 
   # GET /chapters/1
@@ -16,6 +16,8 @@ class ChaptersController < ApplicationController
   # GET /chapters/new
   def new
     @chapter = Chapter.new
+    @story = Story.find_by_id(params[:story_id])
+
   end
 
   # GET /chapters/1/edit
@@ -25,8 +27,9 @@ class ChaptersController < ApplicationController
   # POST /chapters
   # POST /chapters.json
   def create
+    @story = Story.find(params[:id])
     @chapter = Chapter.new(chapter_params)
-    @chapter.user = current_user
+ #   @chapter.user = current_user
     respond_to do |format|
       if @chapter.save
         format.html { redirect_to @chapter, notice: 'Chapter was successfully created.' }

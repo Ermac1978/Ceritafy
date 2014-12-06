@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :stories do
     resources :chapters
   end
+
   resources :users
 
   post "signin", to: "session#signin"

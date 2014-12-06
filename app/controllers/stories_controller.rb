@@ -4,8 +4,8 @@ class StoriesController < ApplicationController
   # GET /stories
   # GET /stories.json
   def index
-    # @stories = Story.all
-    @stories = Story.for_user(current_user)
+    @stories = Story.all
+    #  @stories = Story.for_user(current_user)
   end
 
   # GET /stories/1
