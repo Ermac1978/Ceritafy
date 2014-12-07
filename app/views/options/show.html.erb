@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Chapter:</strong>
+  <%= @option.chapter_id %>
+</p>
+
+<p>
+  <strong>Option text:</strong>
+  <%= @option.option_text %>
+</p>
+
+<p>
+  <strong>Prev chapter:</strong>
+  <%= @option.prev_chapter %>
+</p>
+
+<p>
+  <strong>Next chapter:</strong>
+  <%= @option.next_chapter %>
+</p>
+
+<%= link_to 'Edit', edit_option_path(@option) %> |
+<%= link_to 'Back', options_path %>

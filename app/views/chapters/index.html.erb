@@ -12,7 +12,7 @@
       <tr>
         <td><%= chapter.id %></td>
         <td><%= link_to 'Show', chapter %></td>
-        <td><%= link_to 'Edit', edit_story_chapter_path(chapter) %></td>
+        <td><%= link_to 'Edit', edit_chapter_path(chapter) %></td>
         <td><%= link_to 'Destroy', chapter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -21,6 +21,6 @@
 
 <br>
 
-<%= link_to 'New Chapter', new_story_chapter_path %><br>
+<%= link_to 'New Chapter', new_chapter_path %><br>
 <%= link_to 'Stories', stories_path %><br>
 <%= link_to 'Sign Out', signout_path, method: :delete%>

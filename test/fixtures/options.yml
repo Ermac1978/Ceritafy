@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: options
+#
+#  id           :integer          not null, primary key
+#  chapter_id   :integer
+#  option_text  :string(255)
+#  prev_chapter :integer
+#  next_chapter :integer
+#  created_at   :datetime
+#  updated_at   :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  chapter_id: 1
+  option_text: MyString
+  prev_chapter: 1
+  next_chapter: 1
+
+two:
+  chapter_id: 1
+  option_text: MyString
+  prev_chapter: 1
+  next_chapter: 1

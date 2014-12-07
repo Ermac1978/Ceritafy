@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141203042409) do
+ActiveRecord::Schema.define(version: 20141207211536) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -39,6 +39,15 @@ ActiveRecord::Schema.define(version: 20141203042409) do
 
   add_index "chapters", ["story_id"], name: "index_chapters_on_story_id"
   add_index "chapters", ["user_id"], name: "index_chapters_on_user_id"
+
+  create_table "options", force: true do |t|
+    t.integer  "chapter_id"
+    t.string   "option_text"
+    t.integer  "prev_chapter"
+    t.integer  "next_chapter"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "stories", force: true do |t|
     t.datetime "created_at"

@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
+  resources :options
+
   ActiveAdmin.routes(self)
   root 'welcome#index'
 
-  resources :stories do
-    resources :chapters
-  end
+  resources :stories
+  resources :chapters
 
   resources :users
 
