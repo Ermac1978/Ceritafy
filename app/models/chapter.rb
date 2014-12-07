@@ -16,6 +16,8 @@ class Chapter < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :story
+  has_many :options, dependent: :destroy
+  accepts_nested_attributes_for :options
 
  # scope :for_user, ->(user) { where(user: user) }
 end
