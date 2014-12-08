@@ -15,8 +15,8 @@ class Story < ActiveRecord::Base
   mount_uploader :user_story, UserStoryUploader
 
   belongs_to :user
-  has_many :chapters, dependent: :destroy
-  accepts_nested_attributes_for :chapters
+  has_many :chapters
+  accepts_nested_attributes_for :chapters, allow_destroy: true
 
 #  scope :for_user, ->(user) { where(user: user) }
 end

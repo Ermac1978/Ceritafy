@@ -9,6 +9,7 @@
 #  user_id      :integer
 #  story_id     :integer
 #  user_text    :text
+#  chapter_num  :integer
 #
 
 require 'test_helper'
