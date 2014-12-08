@@ -13,6 +13,7 @@
 #
 
 class Option < ActiveRecord::Base
+
   belongs_to :prev_chapter, class_name: "Chapter", foreign_key: "prev_chapter"
   belongs_to :next_chapter, class_name: "Chapter", foreign_key: "next_chapter"
 end

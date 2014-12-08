@@ -1,6 +1,6 @@
 <fieldset>
   <%= f.label :option_text, "What is the option?" %>
-  <%= f.text_field :option_text %>
+  <%= f.text_field :option_text, class: "option_text" %>
   <%= f.label :next_chapter_id, "This option goes to which chapter?" %>
   <%= f.select :next_chapter_id, @story.chapters.collect {|f| [ f.chapter_num, f.id ] }  %>
   <%= f.hidden_field :_destroy %>

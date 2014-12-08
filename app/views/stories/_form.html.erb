@@ -14,12 +14,12 @@
       <%= f.label :title %><br />
       <%= f.text_field :title %>
     </div>
-
-    <%= f.fields_for :chapters do |builder| %>
+    <div>
+      <%= f.fields_for :chapters do |builder| %>
         <%= render 'chapter_fields', f: builder %>
-    <% end %>
-    <%= link_to_add_fields "Add Chapter", f, :chapters %>
-
+      <% end %>
+      <%= link_to_add_fields "Add Chapter", f, :chapters %>
+    </div>
     <div class="actions">
       <%= f.submit %>
     </div>

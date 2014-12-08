@@ -4,9 +4,25 @@
 
 fieldset {
   background-color: lightgrey;
-  width: 500px;
+  width: 700px;
   padding: 15px;
   border: 15px solid navy;
   margin: 15px;
+}
 
+.user_text {
+  border: 2px solid;
+  padding: 10px 10px;
+  width: 100%;
+  height: 200px;
+  resize: both;
+  overflow: auto;
+}
+
+.option_text {
+  width: 100%;
+}
+
+.chapter_num {
+  width: 5%;
 }
