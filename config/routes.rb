@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   resources :users
 
-  resources :stories
-  resources :chapters
+  resources :stories do
+    resources :chapters
+  end
+
   resources :options
 
   root 'welcome#index'
