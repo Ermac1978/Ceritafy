@@ -73,7 +73,7 @@ class StoriesController < ApplicationController
     def story_params
       params.require(:story).permit(:user_story, :title, :user_text,
                                     chapters_attributes: [:id, :story_id, :user_text, :chapter_num, :_destroy,
-                                    options_attributes: [:id, :option_text, :chapter_id, :prev_chapter, :next_chapter, :_destroy]]
+                                    options_attributes: [:id, :option_text, :chapter_id, :prev_chapter, :next_chapter, :next_chapter_id, :_destroy]]
                                    )
     end
 end
