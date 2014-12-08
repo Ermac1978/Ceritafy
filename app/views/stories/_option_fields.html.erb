@@ -1,6 +1,7 @@
 <fieldset>
   <%= f.label :option_text, "Option content" %>
   <%= f.text_field :option_text %>
+  <%= f.select :next_chapter, Chapter.all.where('story_id = ?', chapter.story_id).collect {|f| [ f.chapter_num, f.id ] }  %>
   <%= f.hidden_field :_destroy %>
   <%= link_to "remove", '#', class: "remove_fields" %>
 </fieldset>
