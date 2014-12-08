@@ -5,18 +5,16 @@
   <%= @story.title %>
 </p>
 
-<ul>
-  <li>
-    <ul class="questions">
-        <% @story.chapters.each do |chapter| %>
-            <li>
-                <%= chapter.user_text %><br>
-                <%= collection_select(:chapter, :option_id, chapter.options, :id, :option_text) %>
-            </li>
-        <% end %>
-    </ul>
-  </li>
+
+<ul class="questions">
+    <% @story.chapters.each do |chapter| %>
+        <li>
+            <%= chapter.user_text %><br>
+            <%= collection_select(:chapter, :option_id, chapter.options, :id, :option_text) %>
+        </li>
+    <% end %>
 </ul>
+
 
 <%= link_to 'Edit', edit_story_path(@story) %> |
 <%= link_to 'Back', stories_path %>
