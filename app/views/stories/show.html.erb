@@ -9,9 +9,10 @@
 <ul style="list-style: none;", class="questions">
     <% @story.chapters.each do |chapter| %>
         <li>
-            <%= chapter.chapter_num %>
+            <h4>Chapter <%= chapter.chapter_num %><br></h4>
             <%= chapter.user_text %><br>
-            <%= collection_select(:chapter, :option_id, chapter.options, :id, :option_text) %>
+            <%= collection_select(:chapter, :option_id, chapter.options, :id, :option_text) %><br>
+          <%= button_tag %> <span>This button is supposed to lead to the next chapter determined by the selected option<span>
         </li>
     <% end %>
 </ul>
