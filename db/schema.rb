@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141208151808) do
+ActiveRecord::Schema.define(version: 20141208200544) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -44,8 +44,6 @@ ActiveRecord::Schema.define(version: 20141208151808) do
   create_table "options", force: true do |t|
     t.integer  "chapter_id"
     t.string   "option_text"
-    t.integer  "prev_chapter"
-    t.integer  "next_chapter"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "next_chapter_id"
