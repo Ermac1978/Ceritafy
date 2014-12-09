@@ -18,5 +18,5 @@ class Story < ActiveRecord::Base
   has_many :chapters
   accepts_nested_attributes_for :chapters, allow_destroy: true
 
-#  scope :for_user, ->(user) { where(user: user) }
+  scope :for_user, ->(user) { where(user: user) }
 end

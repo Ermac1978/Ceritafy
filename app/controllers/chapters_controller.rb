@@ -1,13 +1,13 @@
 class ChaptersController < ApplicationController
   before_action :set_chapter, only: [:show, :edit, :update, :destroy]
-  before_action :set_story, only: [:new, :show, :edit, :update, :destroy]
+  before_action :set_story, only: [:show, :edit, :update, :destroy]
 
 
   # GET /chapters
   # GET /chapters.json
   def index
-    @chapters = Chapter.all
-  # @chapters = Chapter.for_user(current_user)
+  #  @chapters = Chapter.all
+    @chapters = Chapter.for_user(current_user)
   end
 
   # GET /chapters/1
@@ -28,7 +28,7 @@ class ChaptersController < ApplicationController
   # POST /chapters.json
   def create
     @chapter = Chapter.new(chapter_params)
- #   @chapter.user = current_user
+    @chapter.user = current_user
     respond_to do |format|
       if @chapter.save
         format.html { redirect_to @chapter, notice: 'Chapter was successfully created.' }

@@ -20,5 +20,5 @@ class Chapter < ActiveRecord::Base
   has_many :options
   accepts_nested_attributes_for :options, allow_destroy: true
 
- # scope :for_user, ->(user) { where(user: user) }
+  scope :for_user, ->(user) { where(user: user) }
 end

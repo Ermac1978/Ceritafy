@@ -1,16 +1,24 @@
 class StoriesController < ApplicationController
   before_action :set_story, only: [:show, :edit, :update, :destroy]
 
+
+
+  def something
+
+  end
+
+
   # GET /stories
   # GET /stories.json
   def index
-    @stories = Story.all
-    #  @stories = Story.for_user(current_user)
+    # @stories = Story.all
+    @stories = Story.for_user(current_user)
   end
 
   # GET /stories/1
   # GET /stories/1.json
   def show
+
   end
 
   # GET /stories/new
@@ -68,6 +76,8 @@ class StoriesController < ApplicationController
     def set_story
       @story = Story.find(params[:id])
     end
+
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def story_params
