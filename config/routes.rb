@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get "search", to: "stories#search"
   post "search", to: "stories#search"
 
+  get "more_stories", to: "more_stories#index"
+
   ActiveAdmin.routes(self)
 
   post "something", to: "stories#something"

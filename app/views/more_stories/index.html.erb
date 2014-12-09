@@ -1,0 +1,75 @@
+<h1>More Stories</h1>
+<div>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th><%= link_to more_stories_path(order_by: 'impressions_count ASC') do %>
+          <span>Most Viewed Stories</span>
+      <% end %>
+    </th>
+    <th colspan="1"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @stories.each do |story| %>
+      <tr>
+        <td><%= story.title %></td>
+        <td><%= story.impressionist_count %></td>
+        <td><%= story.created_at %></td>
+        <td><%= story.updated_at %></td>
+        <td><%= link_to 'Read', story %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+</div>
+
+<div>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th><%= link_to more_stories_path(order_by: 'created_at DESC') do %>
+          <span>New Stories</span>
+      <% end %>
+    </th>
+    <th colspan="1"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @stories.each do |story| %>
+      <tr>
+        <td><%= story.title %></td>
+        <td><%= story.impressionist_count %></td>
+        <td><%= story.created_at %></td>
+        <td><%= story.updated_at %></td>
+        <td><%= link_to 'Read', story %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+</div>
+
+<div>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th><%= link_to more_stories_path(order_by: 'updated_at ASC') do %>
+          <span> Recent Updates </span>
+      <% end %>
+    </th>
+    <th colspan="1"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @stories.each do |story| %>
+      <tr>
+        <td><%= story.title %></td>
+        <td><%= story.impressionist_count %></td>
+        <td><%= story.created_at %></td>
+        <td><%= story.updated_at %></td>
+        <td><%= link_to 'Read', story %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+</div>

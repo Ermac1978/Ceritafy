@@ -10,6 +10,7 @@
 #  title             :string(255)
 #  user_text         :text
 #  impressions_count :integer
+#  editor_picks      :boolean
 #
 
 class Story < ActiveRecord::Base
