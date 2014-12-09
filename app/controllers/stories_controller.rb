@@ -8,19 +8,16 @@ class StoriesController < ApplicationController
 
   end
 
-
   def search
     @stories = Story.for_user(current_user).where("title like ?", "%#{params[:search_query]}%").order(@order_by)
     render template: "stories/index"
   end
 
-
-
   # GET /stories
   # GET /stories.json
   def index
     # @stories = Story.all
-    @stories = Story.for_user(current_user)
+    @stories = Story.for_user(current_user).order(@order_by)
   end
 
   # GET /stories/1
@@ -86,7 +83,7 @@ class StoriesController < ApplicationController
     end
 
     def set_order_by
-      @order_by = params[:order_by] || "title ASC"
+      @order_by = params[:order_by] || "title ASC, created_at DESC, updated_at DESC"
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

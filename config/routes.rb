@@ -14,23 +14,12 @@ Rails.application.routes.draw do
   get "signup", to: "welcome#index"
   post "signup", to: "session#signup"
 
+  get "search", to: "stories#search"
   post "search", to: "stories#search"
-
-
-#  resources :super_heros do
-#    collection do
-#      post "search"
-#    end
-#  end
-
 
   ActiveAdmin.routes(self)
 
-
   post "something", to: "stories#something"
-
-
-
 
 
   # The priority is based upon order of creation: first created -> highest priority.
