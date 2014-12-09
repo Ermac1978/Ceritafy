@@ -21,4 +21,8 @@ class Chapter < ActiveRecord::Base
   accepts_nested_attributes_for :options, allow_destroy: true
 
   scope :for_user, ->(user) { where(user: user) }
+
+  def next_chapter
+    self.options.where
+  end
 end

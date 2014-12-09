@@ -4,8 +4,19 @@
   <strong>Chapter Body</strong>
   <%= @chapter.user_text %>
 </p>
+ <%= @chapter.options.each do |chapter| %>
+    <%= chapter.option_text %>
+    <%# link_to 'Pick', story_chapter_path(chapter, chapter.next_chapter) %>
+<% end %>
 
-<%= link_to 'Edit', edit_story_chapter_path(@story, @chapter) %>
-<%= link_to 'Back', story_chapters_path %>
-<br>
-<%= link_to 'Add another chapter', new_story_chapter_path %>
+
+
+
+
+
+
+
+<% if @story.user_id == current_user.id %>
+    <%= link_to 'Edit', edit_story_chapter_path(@story, @chapter) %>
+    <%= link_to 'Back', story_chapters_path %>
+<% end %>

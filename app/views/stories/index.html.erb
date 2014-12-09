@@ -30,7 +30,7 @@
         <td><%= story.impressions_count %></td>
         <td><%= story.created_at %></td>
         <td><%= story.updated_at %></td>
-        <td><%= link_to 'Read', story %></td>
+        <td><%= link_to 'Read', story_chapter_path(story, story.first_chapter ) %></td>
         <td><%= link_to 'Edit', edit_story_path(story) %> </td>
         <td><%= link_to 'Delete', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

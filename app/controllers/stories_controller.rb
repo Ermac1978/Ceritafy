@@ -5,6 +5,7 @@ class StoriesController < ApplicationController
 
   def log_impression
     @story = Story.find(params[:id])
+#    @story.view_count += 1
     @story.impressions.create(ip_address: request.remote_ip,user_id:current_user.id)
   end
 
@@ -84,6 +85,9 @@ class StoriesController < ApplicationController
     def set_story
       @story = Story.find(params[:id])
     end
+
+
+
 
     def set_order_by
       @order_by = params[:order_by] || "title ASC, created_at DESC, updated_at DESC"

@@ -27,4 +27,10 @@ class Story < ActiveRecord::Base
   accepts_nested_attributes_for :chapters, allow_destroy: true
 
   scope :for_user, ->(user) { where(user: user) }
+
+  def first_chapter
+ #   Chapter.where(chapter_num: 1).where(story_id: id).first
+    self.chapters.where(chapter_num: 1).first
+  end
+
 end

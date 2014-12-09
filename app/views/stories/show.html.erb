@@ -3,17 +3,3 @@
 <h2>
   <strong><%= @story.title %></strong>
 </h2>
-
-
-
-<%= form_tag something_path, class: "form-signin" %>
-    <%= @story.chapters.first.user_text %>
-<% @story.chapters.each do |chapter| %>
-<%= collection_select(:chapter, :option_id, chapter.options, :id, :option_text) %><br>
-<% end %>
-<%= submit_tag "Pick this Option", method: :post, class: "btn btn-sm btn-primary btn-block"  %>
-
-<% if @story.user_id == current_user.id %>
-    <%= link_to 'Edit', edit_story_path(@story) %> |
-    <%= link_to 'Back', stories_path %>
-<% end %>
