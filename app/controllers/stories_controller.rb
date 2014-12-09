@@ -1,11 +1,19 @@
 class StoriesController < ApplicationController
   before_action :set_story, only: [:show, :edit, :update, :destroy]
+  before_action :set_order_by, only: [:search, :index]
 
   impressionist actions: [:show]
 
   def something
 
   end
+
+
+  def search
+    @stories = Story.for_user(current_user).where("title like ?", "%#{params[:search_query]}%").order(@order_by)
+    render template: "stories/index"
+  end
+
 
 
   # GET /stories
@@ -77,7 +85,9 @@ class StoriesController < ApplicationController
       @story = Story.find(params[:id])
     end
 
-
+    def set_order_by
+      @order_by = params[:order_by] || "title ASC"
+    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def story_params

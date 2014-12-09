@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   resources :stories do
     resources :chapters
   end
-
   resources :options
 
   root 'welcome#index'
@@ -14,6 +13,16 @@ Rails.application.routes.draw do
 
   get "signup", to: "welcome#index"
   post "signup", to: "session#signup"
+
+  post "search", to: "stories#search"
+
+
+#  resources :super_heros do
+#    collection do
+#      post "search"
+#    end
+#  end
+
 
   ActiveAdmin.routes(self)
 
