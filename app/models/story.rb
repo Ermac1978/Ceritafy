@@ -12,6 +12,8 @@
 #
 
 class Story < ActiveRecord::Base
+  is_impressionable
+
   mount_uploader :user_story, UserStoryUploader
 
   belongs_to :user
@@ -19,4 +21,7 @@ class Story < ActiveRecord::Base
   accepts_nested_attributes_for :chapters, allow_destroy: true
 
   scope :for_user, ->(user) { where(user: user) }
+
+
+
 end
