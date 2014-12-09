@@ -1,19 +1,23 @@
 class MoreStoriesController < ApplicationController
   before_action :set_story, only: [:show]
-  before_action :set_order_by, only: [:search, :index]
 
-  impressionist actions: [:show]
+  before_filter :log_impression, :only=> [:show]
+
+  def log_impression
+    @story = Story.find(params[:id])
+    @story.impressions.create(ip_address: request.remote_ip,user_id:current_user.id)
+  end
+
 
   def more_search
-    @stories = Story.all.where("title like ?", "%#{params[:search_query]}%").order(@order_by)
+    @stories = Story.where("title like ?", "%#{params[:search_query]}%").order(params[:order_by] || "title ASC")
     render template: "more_stories/index"
   end
 
   # GET /stories
   # GET /stories.json
   def index
-     @stories = Story.all.order(@order_by)
-    # @stories = Story.for_user(current_user).order(@order_by)
+    @stories = Story.all
   end
 
   # GET /stories/1
@@ -26,10 +30,6 @@ class MoreStoriesController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_story
     @story = Story.find(params[:id])
-  end
-
-  def set_order_by
-    @order_by = params[:order_by] || "title ASC, impressions_count ASC, created_at DESC, updated_at DESC"
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

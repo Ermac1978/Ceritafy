@@ -1,8 +1,12 @@
 class StoriesController < ApplicationController
   before_action :set_story, only: [:show, :edit, :update, :destroy]
   before_action :set_order_by, only: [:search, :index]
+  before_filter :log_impression, :only=> [:show]
 
-  impressionist actions: [:show]
+  def log_impression
+    @story = Story.find(params[:id])
+    @story.impressions.create(ip_address: request.remote_ip,user_id:current_user.id)
+  end
 
   def something
 
@@ -16,7 +20,6 @@ class StoriesController < ApplicationController
   # GET /stories
   # GET /stories.json
   def index
-    # @stories = Story.all
     @stories = Story.for_user(current_user).order(@order_by)
   end
 
@@ -83,7 +86,7 @@ class StoriesController < ApplicationController
     end
 
     def set_order_by
-      @order_by = params[:order_by] || "title ASC, impressions_count ASC, created_at DESC, updated_at DESC"
+      @order_by = params[:order_by] || "title ASC, created_at DESC, updated_at DESC"
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

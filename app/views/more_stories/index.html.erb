@@ -8,10 +8,10 @@
   </tr>
   </thead>
   <tbody>
-  <% @stories.each do |story| %>
+  <% @stories.order('impressions_count desc').each do |story| %>
       <tr>
         <td><%= story.title %></td>
-        <td><%= story.impressionist_count %></td>
+        <td><%= story.impressions_count %></td>
         <td><%= story.created_at %></td>
         <td><%= story.updated_at %></td>
         <td><%= link_to 'Read', story %></td>
@@ -30,10 +30,10 @@
   </tr>
   </thead>
   <tbody>
-  <% @stories.each do |story| %>
+  <% @stories.order('created_at desc').each do |story| %>
       <tr>
         <td><%= story.title %></td>
-        <td><%= story.impressionist_count %></td>
+        <td><%= story.impressions_count %></td>
         <td><%= story.created_at %></td>
         <td><%= story.updated_at %></td>
         <td><%= link_to 'Read', story %></td>
@@ -52,10 +52,10 @@
   </tr>
   </thead>
   <tbody>
-  <% @stories.each do |story| %>
+  <% @stories.order('updated_at desc').each do |story| %>
       <tr>
         <td><%= story.title %></td>
-        <td><%= story.impressionist_count %></td>
+        <td><%= story.impressions_count %></td>
         <td><%= story.created_at %></td>
         <td><%= story.updated_at %></td>
         <td><%= link_to 'Read', story %></td>
@@ -78,7 +78,7 @@
         <tr>
           <% if story.editor_picks == true %>
           <td><%= story.title %></td>
-          <td><%= story.impressionist_count %></td>
+          <td><%= story.impressions_count %></td>
           <td><%= story.created_at %></td>
           <td><%= story.updated_at %></td>
           <td><%= link_to 'Read', story %></td>

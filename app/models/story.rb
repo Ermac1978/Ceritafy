@@ -9,12 +9,16 @@
 #  user_id           :integer
 #  title             :string(255)
 #  user_text         :text
-#  impressions_count :integer
 #  editor_picks      :boolean
+#  impressions_count :integer
 #
 
 class Story < ActiveRecord::Base
-  is_impressionable :counter_cache => true
+  has_many :impressions, as: :impressionable
+
+  def impression_count
+    impressions.size
+  end
 
   mount_uploader :user_story, UserStoryUploader
 

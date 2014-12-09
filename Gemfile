@@ -64,4 +64,3 @@ gem 'bcrypt', '~> 3.1.7'
 gem "letter_opener", :group => :development
 gem 'activeadmin', github: 'activeadmin'
 gem 'simple_form'
-gem 'impressionist'

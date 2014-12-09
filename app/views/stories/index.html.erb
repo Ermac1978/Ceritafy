@@ -7,7 +7,7 @@
             <span>Title</span>
           <% end %>
       </th>
-      <th><%= link_to stories_path(order_by: 'impressions_count DESC') do %>
+      <th><%= link_to stories_path(order_by: 'impressions_count desc') do %>
         <span>View Count </span>
         <% end %>
       </th>
@@ -27,7 +27,7 @@
     <% @stories.each do |story| %>
       <tr>
         <td><%= story.title %></td>
-        <td><%= story.impressionist_count %></td>
+        <td><%= story.impressions_count %></td>
         <td><%= story.created_at %></td>
         <td><%= story.updated_at %></td>
         <td><%= link_to 'Read', story %></td>

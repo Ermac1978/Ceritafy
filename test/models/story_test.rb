@@ -9,8 +9,8 @@
 #  user_id           :integer
 #  title             :string(255)
 #  user_text         :text
-#  impressions_count :integer
 #  editor_picks      :boolean
+#  impressions_count :integer
 #
 
 require 'test_helper'
