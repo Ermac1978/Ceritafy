@@ -2,17 +2,18 @@
 #
 # Table name: stories
 #
-#  id         :integer          not null, primary key
-#  created_at :datetime
-#  updated_at :datetime
-#  user_story :string(255)
-#  user_id    :integer
-#  title      :string(255)
-#  user_text  :text
+#  id                :integer          not null, primary key
+#  created_at        :datetime
+#  updated_at        :datetime
+#  user_story        :string(255)
+#  user_id           :integer
+#  title             :string(255)
+#  user_text         :text
+#  impressions_count :integer
 #
 
 class Story < ActiveRecord::Base
-  is_impressionable
+  is_impressionable :counter_cache => true
 
   mount_uploader :user_story, UserStoryUploader
 

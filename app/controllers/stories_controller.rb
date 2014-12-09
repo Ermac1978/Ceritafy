@@ -83,7 +83,7 @@ class StoriesController < ApplicationController
     end
 
     def set_order_by
-      @order_by = params[:order_by] || "title ASC, created_at DESC, updated_at DESC"
+      @order_by = params[:order_by] || "title ASC, impressions_count ASC, created_at DESC, updated_at DESC"
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

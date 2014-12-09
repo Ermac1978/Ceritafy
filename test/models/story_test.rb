@@ -2,13 +2,14 @@
 #
 # Table name: stories
 #
-#  id         :integer          not null, primary key
-#  created_at :datetime
-#  updated_at :datetime
-#  user_story :string(255)
-#  user_id    :integer
-#  title      :string(255)
-#  user_text  :text
+#  id                :integer          not null, primary key
+#  created_at        :datetime
+#  updated_at        :datetime
+#  user_story        :string(255)
+#  user_id           :integer
+#  title             :string(255)
+#  user_text         :text
+#  impressions_count :integer
 #
 
 require 'test_helper'

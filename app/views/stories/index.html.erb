@@ -7,7 +7,10 @@
             <span>Title</span>
           <% end %>
       </th>
-      <th>View Count <%# link_to stories_path(order_by: 'impressionist_count ASC') %></th>
+      <th><%= link_to stories_path(order_by: 'impressions_count DESC') do %>
+        <span>View Count </span>
+        <% end %>
+      </th>
       <th><%= link_to stories_path(order_by: 'created_at ASC') do %>
             <span>Created At </span>
           <% end %>
