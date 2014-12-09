@@ -9,7 +9,12 @@
           </ul>
         </div>
     <% end %>
-
+    <div>
+    <% if signed_in? && current_user.admin? %>
+      <%= f.label :editor_picks %><br />
+      <%= f.check_box :editor_picks %>
+    <% end %>
+    </div>
     <div>
       <%= f.label :title %><br />
       <%= f.text_field :title %>

@@ -4,7 +4,7 @@ class MoreStoriesController < ApplicationController
 
   impressionist actions: [:show]
 
-  def search
+  def more_search
     @stories = Story.all.where("title like ?", "%#{params[:search_query]}%").order(@order_by)
     render template: "more_stories/index"
   end
