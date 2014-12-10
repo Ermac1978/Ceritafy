@@ -12,5 +12,5 @@
 
 class Option < ActiveRecord::Base
   belongs_to :chapter
-  belongs_to :next_chapter, class_name: "Chapter", foreign_key: "next_chapter"
+  belongs_to :next_chapter, class_name: "Chapter"
 end

@@ -9,11 +9,12 @@
 
 
 
- <% @chapter.options.each do |chapter| %>
-    <%= link_to 'Pick', story_chapter_path(chapter) do %>
-        <%= chapter.option_text %><br>
+<% @chapter.options.each do |option| %>
+    <%= link_to story_chapter_path(@story, option.next_chapter) do %>
+        <%= option.option_text %><br>
     <% end %>
 <% end %>
+
 
 <br>
 <br>
