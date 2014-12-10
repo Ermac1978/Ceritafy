@@ -22,7 +22,9 @@ class Chapter < ActiveRecord::Base
 
   scope :for_user, ->(user) { where(user: user) }
 
-  def next_chapter
-    self.options.where
+
+  def to_chapter
+    Option.where(chapter_id: id).where(next_chapter_id: id)
+#   self.options.where(next_chapter_id: chapter_id)
   end
 end

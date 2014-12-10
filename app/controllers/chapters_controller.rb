@@ -77,7 +77,7 @@ class ChaptersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def chapter_params
       params.require(:chapter).permit(:id, :story_id, :user_text, :chapter_num, :_destroy,
-                                      options_attributes: [:id, :option_text, :chapter_id, :prev_chapter, :next_chapter, :next_chapter_id, :_destroy]
+                                      options_attributes: [:id, :option_text, :chapter_id, :prev_chapter, :next_chapter_id, :_destroy]
                                      )
     end
 end

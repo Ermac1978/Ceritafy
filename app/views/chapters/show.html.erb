@@ -1,18 +1,24 @@
-<p id="notice"><%= notice %></p>
+<br>
+<br>
+<br>
+<br>
 
 <p>
-  <strong>Chapter Body</strong>
   <%= @chapter.user_text %>
 </p>
- <%= @chapter.options.each do |chapter| %>
-    <%= chapter.option_text %>
-    <%# link_to 'Pick', story_chapter_path(chapter, chapter.next_chapter) %>
+
+
+
+ <% @chapter.options.each do |chapter| %>
+    <%= link_to 'Pick', story_chapter_path(chapter) do %>
+        <%= chapter.option_text %><br>
+    <% end %>
 <% end %>
 
-
-
-
-
+<br>
+<br>
+<br>
+<br>
 
 
 

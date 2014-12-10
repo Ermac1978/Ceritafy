@@ -86,9 +86,6 @@ class StoriesController < ApplicationController
       @story = Story.find(params[:id])
     end
 
-
-
-
     def set_order_by
       @order_by = params[:order_by] || "title ASC, created_at DESC, updated_at DESC"
     end

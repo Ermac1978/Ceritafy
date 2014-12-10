@@ -10,10 +10,8 @@
   <tbody>
     <% @chapters.each do |chapter| %>
       <tr>
-        <td><%= chapter.id %></td>
+        <td><%= chapter.num %></td>
         <td><%= link_to 'Show', story_chapters_path %></td>
-
-
       </tr>
     <% end %>
   </tbody>
