@@ -24,6 +24,6 @@
 
 
 <% if @story.user_id == current_user.id %>
-    <%= link_to 'Edit', edit_story_chapter_path(@story, @chapter) %>
-    <%= link_to 'Back', story_chapters_path %>
+    <%= link_to 'Edit This Story', edit_story_path(@story) %>
+    <%# link_to 'Back', story_chapters_path %>
 <% end %>
