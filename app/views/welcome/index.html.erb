@@ -1,22 +1,32 @@
-<div class="jumbotron">
-  <h1 class="text-center">Ceritafy</h1>
-  <p class="text-center">Ceritafy is a tool you can use to write your own CYOA story!</p>
+<div class="jumbotron jumbotron-cornflowerblue text-centered">
+  <h1>Ceritafy</h1>
+  <p>Ceritafy is a fun way to start writing your own Choose Your Own Adventure style stories!</p>
 </div>
 
-
 <div>
-<% if signed_in? %>
-<% else %>
-<%= form_tag signup_path, class: "form-signin" %>
-<h2 class="form-signin-heading">Please sign up!</h2>
-<%= text_field_tag "name", nil, class: "form-control", placeholder: "Name" %>
-<%= text_field_tag "email", nil, class: "form-control", placeholder: "Email" %>
-<%= text_field_tag "password", nil, class: "form-control", placeholder: "Password" %>
-<%= text_field_tag "password_confirmation", nil, class: "form-control", placeholder: "Password Confirmation" %>
-<%= submit_tag "Sign up", method: :post, class: "btn btn-lg btn-primary btn-block"  %>
+    <% if signed_in? %>
+    <% else %>
+    <%= form_tag signup_path, class: "form-signin" %>
+    <h2 class="form-signin-heading">Please sign up!</h2>
+    <%= text_field_tag "name", nil, class: "form-control", placeholder: "Name" %>
+    <%= text_field_tag "email", nil, class: "form-control", placeholder: "Email" %>
+    <%= text_field_tag "password", nil, class: "form-control", placeholder: "Password" %>
+    <%= text_field_tag "password_confirmation", nil, class: "form-control", placeholder: "Password Confirmation" %>
+    <%= submit_tag "Sign up", method: :post, class: "btn btn-lg btn-primary btn-block"  %>
 <% end %>
 </div>
 
+<center><div>
+    <% if signed_in? %>
+        <%= form_tag search_path, class: "navbar-form"%>
+        <%= text_field_tag "search_query", nil, class: "form-control", placeholder: "Find a Story" %>
+        <%= submit_tag "Search", class: "btn btn-default" %>
+        <%= button_to "Reset", root_path, class: "btn btn-warning" %>
+    <% end %>
+</div>
+</center>
+
+<section>
 
 <div>
 <h1>Check Out These Stories!</h1>
@@ -110,3 +120,5 @@
   </table>
 </div>
 </div>
+
+</section>

@@ -3,42 +3,29 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  padding-top: 10px;
-  padding-bottom: 40px;
-  background-color: #eee;
+  background-color: cornflowerblue;
 }
 
-.form-signin {
-  max-width: 330px;
-  padding: 15px;
-  margin: 0 auto;
+img {
+  max-width: 100%;
 }
-.form-signin .form-signin-heading,
-.form-signin .checkbox {
-  margin-bottom: 10px;
+
+.navbar {
+  border-radius: 0;
 }
-.form-signin .checkbox {
-  font-weight: normal;
+
+.jumbotron-cornflowerblue {
+  background-color: cornflowerblue;
 }
-.form-signin .form-control {
-  position: relative;
-  height: auto;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 10px;
-  font-size: 16px;
+
+.text-centered { text-align: center; }
+.no-margin { margin: 0; }
+
+
+
+@media (max-width: 767px) {
+  .jumbotron h1 {
+    font-size: 31px;
+  }
 }
-.form-signin .form-control:focus {
-  z-index: 2;
-}
-.form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
+

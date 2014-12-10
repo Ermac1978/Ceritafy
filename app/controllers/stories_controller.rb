@@ -9,13 +9,9 @@ class StoriesController < ApplicationController
     @story.impressions.create(ip_address: request.remote_ip,user_id:current_user.id)
   end
 
-  def something
-
-  end
-
   def search
     @stories = Story.for_user(current_user).where("title like ?", "%#{params[:search_query]}%").order(@order_by)
-    render template: "stories/index"
+    render template: "welcome/index"
   end
 
   # GET /stories
@@ -46,8 +42,9 @@ class StoriesController < ApplicationController
     @story.user = current_user
     respond_to do |format|
       if @story.save
-      #  format.html { redirect_to @story, notice: 'Story was successfully created.' }
-        format.html { redirect_to stories_path }
+       format.html { redirect_to @story, notice: 'Story was successfully created.' }
+     #   format.html { redirect_to stories_path }
+        format.html { redirect_to  story_chapter_path }
         format.json { render :show, status: :created, location: @story }
       else
         format.html { render :new }
@@ -62,6 +59,7 @@ class StoriesController < ApplicationController
     respond_to do |format|
       if @story.update(story_params)
         format.html { redirect_to @story, notice: 'Story was successfully updated.' }
+
         format.json { render :show, status: :ok, location: @story }
       else
         format.html { render :edit }

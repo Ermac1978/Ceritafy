@@ -1,15 +1,12 @@
 class WelcomeController < ApplicationController
   skip_before_action :authenticate, only: [:index]
-
   before_action :set_story, only: [:show]
-
   before_filter :log_impression, :only=> [:show]
 
   def log_impression
     @story = Story.find(params[:id])
     @story.impressions.create(ip_address: request.remote_ip,user_id:current_user.id)
   end
-
 
   def more_search
     @stories = Story.where("title like ?", "%#{params[:search_query]}%").order(params[:order_by] || "title ASC")
