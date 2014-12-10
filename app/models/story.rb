@@ -14,6 +14,9 @@
 #
 
 class Story < ActiveRecord::Base
+
+  validates :title, presence: true
+
   has_many :impressions, as: :impressionable
 
   def impression_count
@@ -32,5 +35,4 @@ class Story < ActiveRecord::Base
  #   Chapter.where(chapter_num: 1).where(story_id: id).first
     self.chapters.where(chapter_num: 1).first
   end
-
 end

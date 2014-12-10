@@ -3,16 +3,110 @@
   <p class="text-center">Ceritafy is a tool you can use to write your own CYOA story!</p>
 </div>
 
-<br>
-<br>
-<br>
 
-
+<div>
+<% if signed_in? %>
+<% else %>
 <%= form_tag signup_path, class: "form-signin" %>
 <h2 class="form-signin-heading">Please sign up!</h2>
 <%= text_field_tag "name", nil, class: "form-control", placeholder: "Name" %>
 <%= text_field_tag "email", nil, class: "form-control", placeholder: "Email" %>
 <%= text_field_tag "password", nil, class: "form-control", placeholder: "Password" %>
 <%= text_field_tag "password_confirmation", nil, class: "form-control", placeholder: "Password Confirmation" %>
-
 <%= submit_tag "Sign up", method: :post, class: "btn btn-lg btn-primary btn-block"  %>
+<% end %>
+</div>
+
+
+<div>
+<h1>Check Out These Stories!</h1>
+<div>
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>Most Viewed Stories</th>
+      <th colspan="1"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @stories.order('impressions_count desc').each do |story| %>
+        <tr>
+          <td><%= story.title %></td>
+          <td><%= story.impressions_count %></td>
+          <td><%= story.created_at %></td>
+          <td><%= story.updated_at %></td>
+          <td><%= link_to 'Read', story_chapter_path(story, story.first_chapter) %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>New Stories</th>
+      <th colspan="1"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @stories.order('created_at desc').each do |story| %>
+        <tr>
+          <td><%= story.title %></td>
+          <td><%= story.impressions_count %></td>
+          <td><%= story.created_at %></td>
+          <td><%= story.updated_at %></td>
+          <td><%= link_to 'Read', story_chapter_path(story, story.first_chapter) %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>Recent Updates</th>
+      <th colspan="1"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @stories.order('updated_at desc').each do |story| %>
+        <tr>
+          <td><%= story.title %></td>
+          <td><%= story.impressions_count %></td>
+          <td><%= story.created_at %></td>
+          <td><%= story.updated_at %></td>
+          <td><%= link_to 'Read', story_chapter_path(story, story.first_chapter) %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>Editor Picks</th>
+      <th colspan="1"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @stories.each do |story| %>
+        <tr>
+          <% if story.editor_picks == true %>
+              <td><%= story.title %></td>
+              <td><%= story.impressions_count %></td>
+              <td><%= story.created_at %></td>
+              <td><%= story.updated_at %></td>
+              <td><%= link_to 'Read', story_chapter_path(story, story.first_chapter) %></td>
+          <% end %>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+</div>

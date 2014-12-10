@@ -13,6 +13,9 @@
 #
 
 class Chapter < ActiveRecord::Base
+
+  validates :chapter_num, presence: true
+
   mount_uploader :user_chapter, UserChapterUploader
 
   belongs_to :user
@@ -21,10 +24,4 @@ class Chapter < ActiveRecord::Base
   accepts_nested_attributes_for :options, allow_destroy: true
 
   scope :for_user, ->(user) { where(user: user) }
-
-
-  def to_chapter
-    Option.where(chapter_id: id).where(next_chapter_id: id)
-#   self.options.where(next_chapter_id: chapter_id)
-  end
 end
