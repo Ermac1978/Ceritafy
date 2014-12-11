@@ -42,9 +42,9 @@ class StoriesController < ApplicationController
     @story.user = current_user
     respond_to do |format|
       if @story.save
-       format.html { redirect_to @story, notice: 'Story was successfully created.' }
-     #   format.html { redirect_to stories_path }
-        format.html { redirect_to  story_chapter_path }
+     #  format.html { redirect_to @story, notice: 'Story was successfully created.' }
+     #   format.html { redirect_to stories_path, notice: 'Story was successfully created.' }
+        format.html { redirect_to edit_story_path(@story), notice: 'Story was successfully created.' }
         format.json { render :show, status: :created, location: @story }
       else
         format.html { render :new }
@@ -58,8 +58,9 @@ class StoriesController < ApplicationController
   def update
     respond_to do |format|
       if @story.update(story_params)
-        format.html { redirect_to @story, notice: 'Story was successfully updated.' }
-
+      #  format.html { redirect_to @story, notice: 'Story was successfully updated.' }
+      #  format.html { redirect_to stories_path, notice: 'Story was successfully updated.' }
+        format.html { redirect_to edit_story_path(@story), notice: 'Story was successfully updated.' }
         format.json { render :show, status: :ok, location: @story }
       else
         format.html { render :edit }
