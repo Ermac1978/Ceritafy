@@ -15,9 +15,8 @@
 //= require turbolinks
 //= require_tree .
 
-var ready;
+$(document).on('page:change', function() {
 
-ready = function() {
     $('form').on('click', '.remove_fields', function(event) {
         $(this).prev('input[type=hidden]').val('1');
         $(this).closest('fieldset').hide();
@@ -30,8 +29,4 @@ ready = function() {
         $(this).before($(this).data('fields').replace(regexp, time));
         return event.preventDefault();
     });
-};
-
-$(document).ready(ready);
-
-$(document).on('page:load', ready);
+});

@@ -44,7 +44,7 @@ class StoriesController < ApplicationController
       if @story.save
      #  format.html { redirect_to @story, notice: 'Story was successfully created.' }
      #   format.html { redirect_to stories_path, notice: 'Story was successfully created.' }
-        format.html { redirect_to edit_story_path(@story), notice: 'Story was successfully created.' }
+        format.html { redirect_to edit_story_path(@story), notice: 'Terrific! Now add Chapter 1 and you are all set!' }
         format.json { render :show, status: :created, location: @story }
       else
         format.html { render :new }

@@ -2,30 +2,44 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
-  background-color: cornflowerblue;
-}
+//body {
+//  background-color: cornflowerblue;
+//}
 
-img {
-  max-width: 100%;
-}
+//img {
+//  max-width: 100%;
+//}
 
 .navbar {
   border-radius: 0;
 }
 
-.jumbotron-cornflowerblue {
-  background-color: cornflowerblue;
-}
+//.jumbotron-cornflowerblue {
+//  background-color: cornflowerblue;
+//}
 
 .text-centered { text-align: center; }
 .no-margin { margin: 0; }
 
 
 
-@media (max-width: 767px) {
-  .jumbotron h1 {
-    font-size: 31px;
-  }
+//@media (max-width: 767px) {
+//  .jumbotron h1 {
+//    font-size: 31px;
+//  }
+//}
+
+
+
+
+.hero-spacer {
+  margin-top: 50px;
 }
 
+.hero-feature {
+  margin-bottom: 30px;
+}
+
+footer {
+  margin: 50px 0;
+}
