@@ -1,29 +1,38 @@
+<div class="container">
+    <div id="page wrap">
+      <div class="DIV_1 center box-sizing">
+        <h3 class="chapter-num-centered">Chapter <%= @chapter.chapter_num %></h3>
+        <p class="P_1"><%= @chapter.user_text %></p>
+      </div>
+    </div>
+<br>
+<br>
+
+    <div>
+        <% @chapter.options.each do |option| %>
+          <div>
+            <%= link_to story_chapter_path(@story, option.next_chapter) do %><br>
+                <div class="option">
+                <%= option.option_text %>
+                </div>
+            <% end %>
+          </div>
+        <% end %>
+    </div>
+
 <br>
 <br>
 <br>
 <br>
 
-<p>
-  <%= @chapter.user_text %>
-</p>
-
-
-
-<% @chapter.options.each do |option| %>
-    <%= link_to story_chapter_path(@story, option.next_chapter) do %>
-        <%= option.option_text %><br>
-    <% end %>
-<% end %>
-
-
-<br>
-<br>
-<br>
-<br>
-
-
-
-<% if @story.user_id == current_user.id %>
-    <%= link_to 'Edit This Story', edit_story_path(@story) %>
-    <%# link_to 'Back', story_chapters_path %>
-<% end %>
+    <div>
+        <% if signed_in? %>
+            <% if @story.user_id == current_user.id %>
+              <div>
+                <%= link_to 'Edit This Story', edit_story_path(@story), class:'btn btn-primary btn-lg btn-block' %>
+              </div>
+            <% end %>
+            <% else %>
+        <% end %>
+    </div>
+</div>

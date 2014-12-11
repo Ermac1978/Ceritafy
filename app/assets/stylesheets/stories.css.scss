@@ -3,10 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 fieldset {
+  box-sizing: border-box;
+  width: 97%;
+  font-size: 125%;
   background-color: lightgrey;
-  width: 700px;
+//  width: 700px;
   padding: 15px;
-  border: 15px solid navy;
+  border: 5px solid navy;
   margin: 15px;
 }
 
@@ -25,4 +28,8 @@ fieldset {
 
 .chapter_num {
   width: 5%;
+}
+
+.story_title {
+  font-size: 100%;
 }

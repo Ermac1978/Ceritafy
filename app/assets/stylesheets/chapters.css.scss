@@ -1,3 +1,46 @@
 // Place all the styles related to the Chapters controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//#DIV_1 {
+//  box-shadow: rgb(0, 0, 0) 0px 0px 20px 0px;
+//  height: 1350px;
+//  width: 400px;
+//  perspective-origin: 220px 695px;
+//  transform-origin: 220px 695px;
+//  background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;
+//  font: normal normal normal normal 16px/normal Times;
+//  margin: 50px 100px;
+//  padding: 20px;
+//}/*#DIV_1*/
+
+
+.DIV_1 {
+  box-sizing: border-box;
+  background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;
+  box-shadow: rgb(0, 0, 0) 0px 0px 20px 0px;
+  padding: 30px;
+}
+
+.chapter-num-centered {
+  text-align: center;
+}
+
+.P_1 {
+  text-indent: 40px;
+  perspective-origin: 200px 210px;
+  transform-origin: 200px 210px;
+  font: normal normal normal normal 15px/30px Georgia, serif;
+  font-size: 150%;
+  margin: 0px 0px 30px;
+}
+
+.option {
+  box-sizing: border-box;
+  box-shadow: rgb(0, 0, 0) 0px 0px 20px 0px;
+  text-align: center;
+  font: normal normal normal normal 15px/30px Georgia, serif;
+  font-size: 150%;
+  padding: 30px;
+}
+

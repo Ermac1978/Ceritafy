@@ -1,4 +1,5 @@
 class ChaptersController < ApplicationController
+  skip_before_action :authenticate, only: [:show]
   before_action :set_chapter, only: [:show, :edit, :update, :destroy]
   before_action :set_story, only: [:show, :edit, :update, :destroy]
 
