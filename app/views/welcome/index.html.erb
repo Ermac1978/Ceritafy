@@ -5,7 +5,7 @@
     <h1>Ceritafy</h1>
     <p>Ceritafy is a fun way to start writing your own Choose Your Own Adventure style stories!</p>
     <p>Ceritafy makes it super simple to start reading and writing so sign up today!</p>
-    <p><a class="btn btn-primary btn-large">Sign Up</a>
+    <p><%=link_to 'Sign Up', signup_path, class:"btn btn-primary btn-large" %>
     </p>
   </header>
 
@@ -27,10 +27,7 @@
                 <img src="http://placehold.it/800x500" alt="">
                 <div class="caption">
                   <h2><%= story.title %></h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                  <p>
-                    <%= link_to 'Read', story_chapter_path(story, story.first_chapter) %>
-                  </p>
+                    <%= link_to 'Read', story_chapter_path(story, story.first_chapter), class:"btn btn-primary btn-large" %>
                 </div>
               </div>
             </div>
@@ -52,10 +49,8 @@
               <img src="http://placehold.it/800x500" alt="">
               <div class="caption">
                 <h2><%= story.title %></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                <p>
-                  <%= link_to 'Read', story_chapter_path(story, story.first_chapter) %>
-                </p>
+                  <%= link_to 'Read', story_chapter_path(story, story.first_chapter), class:"btn btn-primary btn-large" %>
+
               </div>
             </div>
           </div>
@@ -77,9 +72,7 @@
               <img src="http://placehold.it/800x500" alt="">
               <div class="caption">
                 <h2><%= story.title %></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                <p>
-                  <%= link_to 'Read', story_chapter_path(story, story.first_chapter) %>
+                  <%= link_to 'Read', story_chapter_path(story, story.first_chapter), class:"btn btn-primary btn-large" %>
                 </p>
               </div>
             </div>
@@ -103,9 +96,7 @@
               <div class="caption">
                 <% if story.editor_picks == true %>
                     <h2><%= story.title %></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    <p>
-                      <%= link_to 'Read', story_chapter_path(story, story.first_chapter) %>
+                      <%= link_to 'Read', story_chapter_path(story, story.first_chapter), class:"btn btn-primary btn-large" %>
                     </p>
                 <% end %>
               </div>

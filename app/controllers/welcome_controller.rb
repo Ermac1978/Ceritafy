@@ -22,7 +22,6 @@ class WelcomeController < ApplicationController
   # GET /stories/1
   # GET /stories/1.json
   def show
-
   end
 
   private

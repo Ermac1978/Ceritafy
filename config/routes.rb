@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   post "signin", to: "session#signin"
   delete "signout", to: "session#signout"
 
-  get "signup", to: "welcome#index"
+  get "signup", to: "session#index"
   post "signup", to: "session#signup"
 
   get "search", to: "stories#search"
@@ -22,8 +22,6 @@ Rails.application.routes.draw do
   post "more_search", to: "more_stories#more_search"
 
   ActiveAdmin.routes(self)
-
-  post "something", to: "stories#something"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
