@@ -7,10 +7,17 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 5.times do |x|
-  Story.create!(title: Faker::Name.name, user_text: Faker::Lorem.paragraph)
+  Story.create!(title: Faker::Name.name,
+                user_text: Faker::Lorem.
+                )
 end
 
 
 5.times do |x|
-  Chapter.create!(user_text: Faker::Lorem.paragraph)
+  Chapter.create!(user_text: Faker::Lorem.paragraph
+                 )
+end
+
+5.times do |x|
+  Option.create!()
 end
