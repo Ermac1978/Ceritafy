@@ -1,6 +1,12 @@
-<h1>Editing story</h1>
+<div class="container">
+  <%= link_to 'Read This Story Now', story_chapter_path(@story, @story.first_chapter), class:'btn btn-primary btn-lg' %>
+  <%= link_to 'Back To My Library', stories_path, class:'btn btn-primary btn-lg' %>
+</div>
 
 <%= render 'form' %>
+<hr>
 
-<%= link_to 'Show', @story %> |
-<%= link_to 'Back', stories_path %>
+<div class="container">
+  <%= link_to 'Read This Story Now', story_chapter_path(@story, @story.first_chapter), class:'btn btn-primary btn-lg' %>
+  <%= link_to 'Back To My Library', stories_path, class:'btn btn-primary btn-lg' %>
+</div>

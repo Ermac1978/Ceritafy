@@ -15,8 +15,8 @@
           <li role="presentation" class="expand"><%= link_to 'Home', root_path %></li>
           <% if signed_in? %>
           <li class="dropdown">
-            <li role="presentation" class="expand"><%= link_to 'My Stories', stories_path %></li>
-            <li role="presentation" class="expand"><%= link_to 'Library', more_stories_path %></li>
+            <li role="presentation" class="expand"><%= link_to 'My Library', stories_path %></li>
+            <!--<li role="presentation" class="expand"><%= link_to 'The Library', more_stories_path %></li>-->
               <% if signed_in? && current_user.admin? %>
                 <li role="presentation" class="expand"><%= link_to 'Users', users_path %></li>
               <% end %>

@@ -1,41 +1,33 @@
-<h1>My Stories</h1>
+<center><%= link_to 'Start A New Story', new_story_path, class:"btn btn-warning btn-lg" %></center>
+  <br>
 
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th><%= link_to stories_path(order_by: 'title DESC') do %>
-            <span>Title</span>
-          <% end %>
-      </th>
-      <th><%= link_to stories_path(order_by: 'impressions_count desc') do %>
-        <span>View Count </span>
-        <% end %>
-      </th>
-      <th><%= link_to stories_path(order_by: 'created_at ASC') do %>
-            <span>Created At </span>
-          <% end %>
-      </th>
-      <th><%= link_to stories_path(order_by: 'updated_at ASC') do %>
-            <span>Updated At </span>
-          <% end %>
-      </th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<!-- Page Content -->
+<div class="container">
+  <!-- Page Header -->
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">My Library
+        <small></small>
+      </h1>
+    </div>
+  </div>
+  <!-- /.row -->
+  <!-- Projects Row -->
+  <div class="row">
     <% @stories.each do |story| %>
-      <tr>
-        <td><%= story.title %></td>
-        <td><%= story.impressions_count %></td>
-        <td><%= story.created_at %></td>
-        <td><%= story.updated_at %></td>
-        <td><%= link_to 'Read', story_chapter_path(story, story.first_chapter) %></td>
-        <td><%= link_to 'Edit', edit_story_path(story) %> </td>
-        <td><%= link_to 'Delete', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <div class="col-md-4 col-sm-6 portfolio-item">
+          <div class="thumbnail">
+            <%= image_tag "4259.png" %>
+              <h3>
+                <%= story.title %>
+              </h3>
+              <p><%= link_to 'Read', story_chapter_path(story, story.first_chapter), class:'btn btn-primary btn-lg btn-block' %></p>
+              <p><%= link_to 'Edit', edit_story_path(story), class:'btn btn-success btn-lg btn-block' %></p>
+              <p><%= link_to 'Delete', story, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger btn-lg btn-block' %></p>
+          </div>
+        </div>
     <% end %>
-  </tbody>
-</table>
-
-<%= link_to 'New Story', new_story_path %><br>
+  </div>
+  <!-- /.row -->
+  <hr>
+</div>

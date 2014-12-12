@@ -4,7 +4,7 @@
   <header class="jumbotron hero-spacer text-centered">
     <h1>Ceritafy</h1>
     <p>Ceritafy is a fun way to start writing your own Choose Your Own Adventure style stories!</p>
-    <p>Ceritafy makes it super simple to start reading and writing so sign up today!</p>
+    <p>Ceritafy makes it super simple to start so sign up today!</p>
     <p><%=link_to 'Sign Up', signup_path, class:"btn btn-primary btn-large" %>
     </p>
   </header>
@@ -24,7 +24,7 @@
         <% @stories.order('impressions_count desc').first(4).each do |story| %>
             <div class="col-md-3 col-sm-6 hero-feature">
               <div class="thumbnail">
-                <img src="http://placehold.it/800x500" alt="">
+                <%= image_tag "4259.png" %>
                 <div class="caption">
                   <h2><%= story.title %></h2>
                     <%= link_to 'Read', story_chapter_path(story, story.first_chapter), class:"btn btn-primary btn-large" %>
@@ -48,7 +48,8 @@
       <% @stories.order('created_at desc').first(4).each do |story| %>
           <div class="col-md-3 col-sm-6 hero-feature">
             <div class="thumbnail">
-              <img src="http://placehold.it/800x500" alt="">
+              <!--<img src="http://placehold.it/800x500" alt="">-->
+              <%= image_tag "4259.png" %>
               <div class="caption">
                 <h2><%= story.title %></h2>
                   <%= link_to 'Read', story_chapter_path(story, story.first_chapter), class:"btn btn-primary btn-large" %>
@@ -73,7 +74,7 @@
       <% @stories.order('updated_at desc').first(4).each do |story| %>
           <div class="col-md-3 col-sm-6 hero-feature">
             <div class="thumbnail">
-              <img src="http://placehold.it/800x500" alt="">
+              <%= image_tag "4259.png" %>
               <div class="caption">
                 <h2><%= story.title %></h2>
                   <%= link_to 'Read', story_chapter_path(story, story.first_chapter), class:"btn btn-primary btn-large" %>
@@ -98,7 +99,7 @@
       <% @stories.first(4).each do |story| %>
           <div class="col-md-3 col-sm-6 hero-feature">
             <div class="thumbnail">
-              <img src="http://placehold.it/800x500" alt="">
+              <%= image_tag "4259.png" %>
               <div class="caption">
                 <% if story.editor_picks == true %>
                     <h2><%= story.title %></h2>

@@ -17,3 +17,7 @@
  *= require chapters
  *= require session
  */
+
+body {
+  background-color: lemonchiffon;
+}
